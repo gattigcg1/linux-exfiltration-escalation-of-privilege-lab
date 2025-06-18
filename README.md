@@ -35,6 +35,8 @@ DeviceFileEvents
 
 Looking at the data above, a suspicious looking file called “super_secret_script.sh” was created on 2025-06-16T12:20:50.902852Z. There are two rows that have this filename, after investigating the contents we find the differences as follows:
 
+![image](https://github.com/user-attachments/assets/93aaed82-dc30-46ae-ba9b-3d41baac883a)
+
 Touch is a linux command that creates the super_secret_script.sh while nano command opens said file in the nano text editor in Linux. 
 
 This is the first most interesting thing, but let's also look in this table and see if there’s anything else interesting. 
@@ -44,6 +46,8 @@ DeviceFileEvents
 | where ActionType == "FileCreated"
 | project Timestamp, DeviceName, InitiatingProcessCommandLine, InitiatingProcessParentFileName
 | order by Timestamp asc
+
+![image](https://github.com/user-attachments/assets/3453d6d7-d3a0-4ce7-be86-0e7ac6ffb3f1)
 
 InitialProcessCommandLine gives us more insight into what effects could be had on the VM. After the command “nano super_secret_script.sh”, we see one more interesting row. “usermod -aG sudo john_smith” which is very suspicious as it gives the user John Smith sudo privileges, which is a backdoor into the system. The door is closing in! 
 
@@ -58,6 +62,8 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, ActionType, InitiatingProcessCommandLine
 | order by Timestamp asc
 ```
+
+![image](https://github.com/user-attachments/assets/f93b0362-cfa0-40c2-8f99-090343c9b2e1)
 
 The date above is used to narrow down the timespan after the super_secret_script.sh was created and ordered by ascending to see events immediately after the file creation. 
 
@@ -74,6 +80,8 @@ DeviceNetworkEvents
 | project Timestamp, ActionType, InitiatingProcessCommandLine
 | order by Timestamp asc
 ```
+
+![image](https://github.com/user-attachments/assets/0f340432-e8ab-4e5e-a142-3c20b957e76e)
 
 We can see that we have a ConnectionRequest ActionType row involving Azure CLI blob storage, followed by a ConnectionSuccess row for the same request. 
 
