@@ -15,6 +15,7 @@ Company A has been noticing some PII information about employees might be gettin
 - Kusto Query Language (KQL)
 - Azure Blob Storage
 
+---
 
 **Steps Taken**
 
