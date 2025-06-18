@@ -45,6 +45,7 @@ DeviceFileEvents
 
 InitialProcessCommandLine gives us more insight into what effects could be had on the VM. After the command “nano super_secret_script.sh”, we see one more interesting row. “usermod -aG sudo john_smith” which is very suspicious as it gives the user John Smith sudo privileges, which is a backdoor into the system. The door is closing in! 
 
+---
 
 **2. Searched the DeviceProcessEvents For Script Execution**
 
