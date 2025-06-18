@@ -84,8 +84,11 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 
 Timestamp: 2025-06-16T12:20:50.902852Z
+
 Event: The user creates a file called super_secret_script.sh through the touch command in Linux. 
+
 Action: Bash script file created.
+
 File Path: /home/gattigcg1/super_secret_script.sh
 
 
@@ -93,8 +96,11 @@ File Path: /home/gattigcg1/super_secret_script.sh
 
 
 Timestamp: 2025-06-16T12:22:51.98438Z
+
 Event: The user creates a file called super_secret_script.sh through the touch command in Linux. 
+
 Action: Bash script opened in nano editor and obviously stuff was written into it.
+
 File Path: /home/gattigcg1/super_secret_script.sh
 
 
@@ -102,8 +108,11 @@ File Path: /home/gattigcg1/super_secret_script.sh
 
 
 Timestamp: 2025-06-16T12:23:17.631238Z
+
 Event: The user executes the super_secret_script.sh.
+
 Action: Script execution.
+
 File Path: /home/gattigcg1/super_secret_script.sh
 
 
@@ -111,8 +120,11 @@ File Path: /home/gattigcg1/super_secret_script.sh
 
 
 Timestamp: 2025-06-16T12:23:17.649853Z
+
 Event: The script grants sudo access to john_smith user. 
+
 Action: Escalation of privilege.
+
 File Path: /home/gattigcg1/super_secret_script.sh
 
 
