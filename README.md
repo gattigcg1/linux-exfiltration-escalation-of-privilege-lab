@@ -76,6 +76,7 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 **3. Chronological Event Timeline**
 
+
 **File creation - super_secret_script.sh**
 
 Timestamp: 2025-06-16T12:20:50.902852Z
@@ -85,6 +86,7 @@ Event: The user creates a file called super_secret_script.sh through the touch c
 Action: Bash script file created.
 
 File Path: /home/gattigcg1/super_secret_script.sh
+
 
 **Opening script and writing it.** 
 
@@ -96,6 +98,7 @@ Action: Bash script opened in nano editor and obviously stuff was written into i
 
 File Path: /home/gattigcg1/super_secret_script.sh
 
+
 **Process Execution - super_secret_script.sh execution**
 
 Timestamp: 2025-06-16T12:23:17.631238Z
@@ -106,6 +109,7 @@ Action: Script execution.
 
 File Path: /home/gattigcg1/super_secret_script.sh
 
+
 **Escalation of privilege - making john_smith a sudo user**
 
 Timestamp: 2025-06-16T12:23:17.649853Z
@@ -115,6 +119,7 @@ Event: The script grants sudo access to john_smith user.
 Action: Escalation of privilege.
 
 File Path: /home/gattigcg1/super_secret_script.sh
+
 
 **Network Request to upload file to Azure Storage Account**
 	
