@@ -81,66 +81,42 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 **3. Chronological Event Timeline**
 
+## Chronological Event Timeline 
 
+### 1. File creation - super_secret_script.sh
 
-**File creation - super_secret_script.sh**
+- **Timestamp:** `2025-06-16T12:20:50.902852Z`
+- **Event:** The user creates a file called super_secret_script.sh through the touch command in Linux.
+- **Action:** Bash script file created.
+- **File Path:** `/home/gattigcg1/super_secret_script.sh`
 
+- ### 2. Opening script and writing it. 
 
-Timestamp: 2025-06-16T12:20:50.902852Z
+- **Timestamp:** `2025-06-16T12:22:51.98438Z`
+- **Event:** The user creates a file called super_secret_script.sh through the touch command in Linux.
+- **Action:** Bash script opened in nano editor and obviously stuff was written into it.
+- **File Path:** `/home/gattigcg1/super_secret_script.sh`
 
-Event: The user creates a file called super_secret_script.sh through the touch command in Linux. 
+### 3. Process Execution - super_secret_script.sh execution
 
-Action: Bash script file created.
+- **Timestamp:** `2025-06-16T12:23:17.631238Z`
+- **Event:** The user executes the super_secret_script.sh.
+- **Action:** Process creation detected.
+- **File Path:** `/home/gattigcg1/super_secret_script.sh`
 
-File Path: /home/gattigcg1/super_secret_script.sh
+### 4. Escalation of privilege - making john_smith a sudo user
 
+- **Timestamp:** `2025-06-16T12:23:17.649853Z`
+- **Event:** The script grants sudo access to john_smith user.
+- **Action:** Escalation of privilege.
+- **File Path:** `/home/gattigcg1/super_secret_script.sh`
 
-**Opening script and writing it.** 
+### 5. Network Request to upload file to Azure Storage Account
 
-
-Timestamp: 2025-06-16T12:22:51.98438Z
-
-Event: The user creates a file called super_secret_script.sh through the touch command in Linux. 
-
-Action: Bash script opened in nano editor and obviously stuff was written into it.
-
-File Path: /home/gattigcg1/super_secret_script.sh
-
-
-**Process Execution - super_secret_script.sh execution**
-
-
-Timestamp: 2025-06-16T12:23:17.631238Z
-
-Event: The user executes the super_secret_script.sh.
-
-Action: Script execution.
-
-File Path: /home/gattigcg1/super_secret_script.sh
-
-
-**Escalation of privilege - making john_smith a sudo user**
-
-
-Timestamp: 2025-06-16T12:23:17.649853Z
-
-Event: The script grants sudo access to john_smith user. 
-
-Action: Escalation of privilege.
-
-File Path: /home/gattigcg1/super_secret_script.sh
-
-
-**Network Request to upload file to Azure Storage Account**
-
-	
-Timestamp: 2025-06-16T12:23:19.007669Z
-
-Event: The script uploads file .my_secret_file.txt to Azure Storage account named gcgstorage12 through the Azure CLI. 
-
-Action: Exfiltration of PII data.
-
-File Path of exfiltrated data: /home/gattigcg1/.secret_data/.my_secret_file.tx
+- **Timestamp:** `2025-06-16T12:23:19.007669Z`
+- **Event:** The script uploads file .my_secret_file.txt to Azure Storage account named gcgstorage12 through the Azure CLI. 
+- **Action:** Exfiltration of PII data.
+- **File Path:** `/home/gattigcg1/.secret_data/.my_secret_file.txt`
 
 ---
 
