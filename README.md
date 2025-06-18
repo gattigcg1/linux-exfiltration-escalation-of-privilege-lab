@@ -44,6 +44,7 @@ DeviceFileEvents
 
 InitialProcessCommandLine gives us more insight into what effects could be had on the VM. After the command “nano super_secret_script.sh”, we see one more interesting row. “usermod -aG sudo john_smith” which is very suspicious as it gives the user John Smith sudo privileges, which is a backdoor into the system. The door is closing in! 
 
+
 **2. Searched the DeviceProcessEvents For Script Execution**
 
 ```kql
@@ -73,6 +74,7 @@ DeviceNetworkEvents
 We can see that we have a ConnectionRequest ActionType row involving Azure CLI blob storage, followed by a ConnectionSuccess row for the same request. 
 
 Note: The script does not appear in the Linux VM, unfortunately I can’t find the exact row in the database that represents the script self-deleting itself (maybe it’s there! Check it out). I looked for some reference to something close to “rm -- "$0" in the DeviceProcessEvents and DeviceFileEvents table but ultimately could not find it. 
+
 
 **3. Chronological Event Timeline**
 
@@ -141,6 +143,7 @@ File Path of exfiltrated data: /home/gattigcg1/.secret_data/.my_secret_file.tx
 **4. Summary**
 
 It looks like an employee gained access to the root account and installed a script. This script had 2 main functions. One function uploaded a file that contained PII information that was only previously accessible to accounts given sudo accounts to an Azure storage. The second function of the script was to give a backdoor to the actor by escalating the privilege of his account by giving his user account sudo access which would allow him to poke through the data more in the future. The script was then deleted. 
+
 
 **5. Response Taken**
 
