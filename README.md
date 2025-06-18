@@ -131,6 +131,7 @@ Action: Exfiltration of PII data.
 
 File Path of exfiltrated data: /home/gattigcg1/.secret_data/.my_secret_file.tx
 
+
 **4. Summary**
 
 It looks like an employee gained access to the root account and installed a script. This script had 2 main functions. One function uploaded a file that contained PII information that was only previously accessible to accounts given sudo accounts to an Azure storage. The second function of the script was to give a backdoor to the actor by escalating the privilege of his account by giving his user account sudo access which would allow him to poke through the data more in the future. The script was then deleted. 
