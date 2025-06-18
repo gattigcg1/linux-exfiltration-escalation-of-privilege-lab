@@ -18,8 +18,6 @@ Company A has been noticing some PII information about employees might be gettin
 
 **Steps Taken**
 
-
-
 **1. Search the DeviceFileEvents**
 
 One of the things we can look for is a file creation that the attacker might have performed in the time span that the company suspects (this is naturally when you placed the “attack script” in the VM). The day in question is X. 
