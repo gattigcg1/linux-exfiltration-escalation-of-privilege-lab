@@ -77,6 +77,7 @@ We can see that we have a ConnectionRequest ActionType row involving Azure CLI b
 
 Note: The script does not appear in the Linux VM, unfortunately I can’t find the exact row in the database that represents the script self-deleting itself (maybe it’s there! Check it out). I looked for some reference to something close to “rm -- "$0" in the DeviceProcessEvents and DeviceFileEvents table but ultimately could not find it. 
 
+---
 
 **3. Chronological Event Timeline**
 
