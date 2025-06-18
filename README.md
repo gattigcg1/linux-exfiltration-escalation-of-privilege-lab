@@ -17,9 +17,9 @@ Company A has been noticing some PII information about employees might be gettin
 
 ---
 
-**Steps Taken**
+## Steps Taken
 
-**1. Search the DeviceFileEvents**
+### 1. Searched the `DeviceFileEvents` Table
 
 One of the things we can look for is a file creation that the attacker might have performed in the time span that the company suspects (this is naturally when you placed the “attack script” in the VM). The day in question is X. 
 
@@ -47,7 +47,7 @@ InitialProcessCommandLine gives us more insight into what effects could be had o
 
 ---
 
-**2. Searched the DeviceProcessEvents For Script Execution**
+### 2. Searched the DeviceProcessEvents For Script Execution
 
 ```kql
 DeviceProcessEvents
@@ -79,9 +79,7 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 ---
 
-**3. Chronological Event Timeline**
-
-## Chronological Event Timeline 
+## 3. Chronological Event Timeline 
 
 ### 1. File creation - super_secret_script.sh
 
@@ -120,13 +118,13 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 ---
 
-**4. Summary**
+## 4. Summary
 
 It looks like an employee gained access to the root account and installed a script. This script had 2 main functions. One function uploaded a file that contained PII information that was only previously accessible to accounts given sudo accounts to an Azure storage. The second function of the script was to give a backdoor to the actor by escalating the privilege of his account by giving his user account sudo access which would allow him to poke through the data more in the future. The script was then deleted. 
 
 ---
 
-**5. Response Taken**
+## 5. Response Taken
 
 The user account that performed the exfiltration of data has been suspended temporarily awaiting further direction by management. The sudo privileges of this account were also removed just in case. This report was provided to the employee’s manager and upper management for further direction. 
 
