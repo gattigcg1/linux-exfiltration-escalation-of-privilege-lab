@@ -31,6 +31,8 @@ DeviceFileEvents
 | where ActionType == "FileCreated"
 ```
 
+![image](https://github.com/user-attachments/assets/1f0bab05-024a-4ce3-9ae5-49161234803a)
+
 Looking at the data above, a suspicious looking file called “super_secret_script.sh” was created on 2025-06-16T12:20:50.902852Z. There are two rows that have this filename, after investigating the contents we find the differences as follows:
 
 Touch is a linux command that creates the super_secret_script.sh while nano command opens said file in the nano text editor in Linux. 
