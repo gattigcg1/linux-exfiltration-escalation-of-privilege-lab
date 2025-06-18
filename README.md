@@ -69,7 +69,9 @@ The date above is used to narrow down the timespan after the super_secret_script
 
 As we can see from the logs, one of the first rows at 2025-06-16T12:23:17.729273Z has value “/bin/bash ./super_secret_script.sh” for the InitiatingProcessCommandLine column. /bin/bash indicates the interpreter that is used, which is bash, and the next part is “./super_secret_script.sh” which shows that the script was executed by the attacker. Shortly after, we see a bunch of commands that indicate some suspicious behavior involving using the Azure CLI. At 2025-06-16T12:23:17.734244Z, we see a command involving uploading to an Azure storage blob account (storage blob upload), using an account key and a storage account. We also checked for anything resembling the script self-deleting since an audit of the VM was done, and the exact file and its contents were not found, but could not find a record referring to this outcome in this table or the DeviceFileEvents table. 
 
-Quick look at the DeviceNetworkEvents
+---
+
+### 3. Quick look at the DeviceNetworkEvents
 
 Using command:
 
@@ -89,7 +91,7 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 ---
 
-## 3. Chronological Event Timeline 
+## 4. Chronological Event Timeline 
 
 ### 1. File creation - super_secret_script.sh
 
@@ -128,13 +130,13 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 
 ---
 
-## 4. Summary
+## 5. Summary
 
 It looks like an employee gained access to the root account and installed a script. This script had 2 main functions. One function uploaded a file that contained PII information that was only previously accessible to accounts given sudo accounts to an Azure storage. The second function of the script was to give a backdoor to the actor by escalating the privilege of his account by giving his user account sudo access which would allow him to poke through the data more in the future. The script was then deleted. 
 
 ---
 
-## 5. Response Taken
+## 6. Response Taken
 
 The user account that performed the exfiltration of data has been suspended temporarily awaiting further direction by management. The sudo privileges of this account were also removed just in case. This report was provided to the employee’s manager and upper management for further direction. 
 
