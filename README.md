@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/82e7f5a9-a73d-47de-a714-874ddb812227)
+
 # Linux, Exfiltration and Escalation Of Privilege Lab
 Incident Response lab fully created by myself - covers creating a Linux vm, creating storage container in Azure, basic linux commands, script writing, creating rules in MDE, report writing, and more. 
 
