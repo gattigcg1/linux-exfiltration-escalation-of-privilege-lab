@@ -100,7 +100,7 @@ Note: The script does not appear in the Linux VM, unfortunately I can’t find t
 - **Action:** Bash script file created.
 - **File Path:** `/home/gattigcg1/super_secret_script.sh`
 
-- ### 2. Opening script and writing it. 
+### 2. Opening script and writing it. 
 
 - **Timestamp:** `2025-06-16T12:22:51.98438Z`
 - **Event:** The user creates a file called super_secret_script.sh through the touch command in Linux.
